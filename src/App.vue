@@ -1,10 +1,8 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue';
-import AnimationBackground from './components/primitive/AnimationBackground.vue';
 </script>
 
 <template>
-  <AnimationBackground/>
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
