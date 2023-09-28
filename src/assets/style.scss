@@ -1,7 +1,7 @@
-$dotsCount:  10;
+$dotsCount:  30;
 $dotsScale: 20;
 $dotsSpeed: 20s;
-$dotsContent: 'ХУЙ';
+$dotsContent: 'Х';
 
 @mixin dots($count) {
   $text-shadow: ();
