@@ -1,10 +1,11 @@
+<script setup>
+import HeadMain from '../components/primitive/Main/HeadMain.vue';
+import slideFooter from '../components/primitive/slideFooter.vue';
+
+</script>
+
 <template>
-  <h1>Contact us</h1>
-  </template>
-  
-  <script>
-    export default {
-  
-    }
-  </script>
-  
+<HeadMain />
+<slideFooter />
+</template>
+
