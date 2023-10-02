@@ -1,5 +1,5 @@
 <template>
-    <section class="main">
+
     <div class="container">
       <div class="main-head">
         <div class="main-head__wrap">
@@ -74,7 +74,6 @@
       </div>
       
     </div>
-  </section>
 </template>
 <script>
 export default {

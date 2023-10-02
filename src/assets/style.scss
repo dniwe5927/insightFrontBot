@@ -33,12 +33,21 @@ $peach: #F6828C;
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Proxima Nova Thin';
+    src: url('fonts/Proxima Nova Thin.otf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 
 
 $dotsCount:  30;
 $dotsScale: 20;
 $dotsSpeed: 20s;
-$dotsContent: 'Хуй';
+$dotsContent: '{}';
 
 @mixin dots($count) {
   $text-shadow: ();
@@ -98,7 +107,6 @@ head::after {
   animation-delay: -19s;
 }
 
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -113,6 +121,16 @@ head::after {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	
+}
+img {
+	pointer-events: none
 }
 
 ul,li {
@@ -159,15 +177,9 @@ h1, h2, h3, h4, h5, p {
 
 body {
 	margin: 0;
-    display: flex;
-    place-items: center;
     min-width: 320px;
     min-height: 100vh;
     font-size: 0.8rem;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
 }
 
 h1 {
@@ -201,6 +213,7 @@ button:focus-visible {
 	max-width: 1280px;
     padding: 12px;
     text-align: center;
+	position: relative;
     z-index: 1;
 }
 
@@ -218,7 +231,7 @@ button:focus-visible {
 }
 
 section {
-	min-height: 100vh;
+	min-height: 80vh;
 }
 
 .section-title {
@@ -552,7 +565,6 @@ section {
 		button {
 			margin: 0 1rem;
 			width: 5.5rem;
-			color: #fff;
 			background: transparent;
 			font-size: 0.65rem;
 			padding: 0;
@@ -567,6 +579,162 @@ section {
 }
 
 
+// footer 
+
+.footer {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+	padding-bottom: 10px;
+	&-btn {
+		opacity: 100%;
+	}
+
+	&-select-btn {
+		opacity: 20%;
+		transform: scale(0.9);
+	}
+}
+.final-footer {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+	transform: translateY(100%); /* Полностью внизу */
+	transition: bottom 0.3s ease;
+  }
+
+// Quiz
+
+
+.quizList {
+	border-radius: 24px;
+    background: #FFF;
+    padding: 16px;	
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+	height: calc(30vh*1.8);
+
+	&-card {
+		min-width: 328px;
+		min-height: 98px;
+		margin-bottom: 24px;
+		background: url( './svg/blueCard.svg' ) no-repeat;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&-content{
+			background: url( './svg/blueCardContent.svg' ) no-repeat;
+			min-width: 320px;
+			min-height: 90px;
+			position: relative;
+			top: 4px;
+    		left: 4px;
+		
+			&-time {
+			position: absolute;
+			right: 0.5rem;
+			color: #EB5757;
+			text-align: right;
+			max-width: 3.5rem;
+			font-size: 0.5rem;
+		}
+
+		&-title {
+			color: #ffffff;
+			text-align: left;
+			font: 600 20px/20px "Proxima Nova", sans-serif;
+			position: relative;
+			top: 8px;
+    		left: 8px;
+		}
+
+		&-text {
+			color: #ffffff;
+			text-align: left;
+			font: 400 12px/12px "Proxima Nova Thin";
+			position: relative;
+			top: 12px;
+    		left: 9px;
+		}
+
+		&-points {
+			color: #ffffff;
+			text-align: left;
+			font: 700 16px/20px "Proxima Nova Bold";
+			position: relative;
+			top: 34px;
+    		left: 10px;
+		}
+		&-points-referral {
+			color: #fff;
+			font-weight: 700;
+			white-space: nowrap;
+			overflow: hidden;
+			display: inline-flex;
+			align-items: center;
+			font-size: 0.8rem;
+		}
+
+		&-btn {
+			background: #ffffff;
+			border-radius: 4px;
+			width: 128px;
+			height: 24px;
+			@include centerInline();
+			font: 700 16px/12px "Proxima Nova Bold";
+			position: relative;
+			color: #007FFF;
+			left: 75px;
+    		top: 6px;
+		}
+		&-btn:hover {
+			transform: scale(1);
+		}
+		&-btn:active {
+			transform: scale(0.9);
+		}
+
+		
+		}
+		&.orange {
+			background: url( './svg/orangeCard.svg' ) no-repeat;
+			.quizList-card-content{
+				background: url( './svg/orangeCardContent.svg' ) no-repeat;
+			}
+
+			.quizList-card-content-btn {
+				color: #fb533d;
+			}
+		}
+	}
+	.empty {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		&-text{
+			color: #007fff;
+			text-align: center;
+			font: 600 24px/24px "Proxima Nova", sans-serif;
+			position: relative;
+			text-wrap: balance;
+			margin: 0px 32px 0px 32px;
+		}
+		&-pic{
+			background: url( './svg/empty-pic.svg' ) no-repeat;
+			width: 281px;
+			height: 240px;
+			position: relative;
+			overflow: hidden;
+		}
+	}
+}
 
 @media (prefers-color-scheme: light) {
   :root {
