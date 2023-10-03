@@ -1,6 +1,6 @@
 <template>
-  <div class="final-footer">
-    <div class="footer-btn">
+  <div class="footer">
+    <router-link :to="this.routeCard" class="footer-btn">
       <svg
         width="32"
         height="32"
@@ -34,8 +34,8 @@
           </clipPath>
         </defs>
       </svg>
-    </div>
-    <div class="footer-btn">
+    </router-link>
+    <router-link to="/loyalty" class="footer-btn">
       <svg
         width="32"
         height="32"
@@ -67,8 +67,8 @@
           </clipPath>
         </defs>
       </svg>
-    </div>
-    <div class="footer-btn">
+    </router-link>
+    <router-link to="/faq" class="footer-btn">
       <svg
         width="32"
         height="32"
@@ -96,8 +96,8 @@
           </clipPath>
         </defs>
       </svg>
-    </div>
-    <div class="footer-btn">
+    </router-link>
+    <router-link to="/support" class="footer-btn">
       <svg
         width="32"
         height="32"
@@ -123,6 +123,56 @@
           </clipPath>
         </defs>
       </svg>
-    </div> 
+    </router-link> 
   </div>
 </template>
+<script>
+export default{
+  props:{
+    typeStyle: String,
+    routeCard: String,
+  },
+  data: function () {
+    return {
+     
+    }
+  },
+}
+</script>
+<style lang="scss" scoped>
+/*  */
+.footer {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+	padding-bottom: 10px;
+	&-btn {
+		opacity: 100%;
+    svg{
+      g{
+        path{
+        fill: v-bind(typeStyle);
+      }
+      }
+      
+    }
+	}
+
+	&-select-btn {
+		opacity: 20%;
+		transform: scale(0.9);
+	}
+}
+.final-footer {
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: center;
+	transform: translateY(100%); /* Полностью внизу */
+	transition: bottom 0.3s ease;
+  }
+
+</style>

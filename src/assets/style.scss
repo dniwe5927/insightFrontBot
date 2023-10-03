@@ -217,6 +217,8 @@ button:focus-visible {
     z-index: 1;
 }
 
+
+
 //commmon
 
 
@@ -231,7 +233,7 @@ button:focus-visible {
 }
 
 section {
-	min-height: 80vh;
+	min-height: 97vh;
 }
 
 .section-title {
@@ -381,7 +383,7 @@ section {
 
 .main {
 	color: #fff;
-
+	
 	&-head {
 		@include spaced();
 		
@@ -399,7 +401,35 @@ section {
 				box-shadow: 0px 0px 15px 0px rgba(45, 54, 63, 0.15);
 				justify-content: center;
 				align-items: center;
-		
+				&-prof{
+					background: #ffffff;
+					border-radius: 50%;
+					width: 32px;
+					height: 32px;
+					position: relative;
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					&-box{
+						border-radius: 80px;
+						width: 28px;
+						height: 28px;
+						position: absolute;
+						left: calc(50% - 14px);
+						top: calc(50% - 14px);
+						overflow: hidden;
+						img{
+							width: 30.4px;
+							height: 38.4px;
+							position: absolute;
+							left: calc(50% - 15.2px);
+							top: -4.8px;
+						}
+					}
+					
+				}
 		
 			svg{
 				position: relative;
@@ -577,38 +607,7 @@ section {
 		}
 	}
 }
-
-
-// footer 
-
-.footer {
-	display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: center;
-	padding-bottom: 10px;
-	&-btn {
-		opacity: 100%;
-	}
-
-	&-select-btn {
-		opacity: 20%;
-		transform: scale(0.9);
-	}
-}
-.final-footer {
-	display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: center;
-	transform: translateY(100%); /* Полностью внизу */
-	transition: bottom 0.3s ease;
-  }
-
 // Quiz
-
 
 .quizList {
 	border-radius: 24px;
@@ -619,7 +618,9 @@ section {
     align-content: center;
     flex-wrap: wrap;
 	height: calc(30vh*1.8);
-
+	.uz {
+		font: 700 10px/12px "Proxima Nova Bold";
+	}
 	&-card {
 		min-width: 328px;
 		min-height: 98px;
