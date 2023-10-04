@@ -28,7 +28,7 @@ const i18n = createI18n({
             "Card name (optional)": "Название карты (по желанию)",
             "Oh!": "Ох!",
             "Choose": "Выбрать",
-            "Take another survey": "Пройти еще один опрос",
+            "Take another survey": "Перейти к опросам",
             "Loyalty": "Лояльность",
             "Profile": "Профиль",
             "Further": "Далее",
